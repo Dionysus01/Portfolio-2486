@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="div">
+
+        <h1 class="hclass">Hello World</h1>
+        <h1 class="abcclass">Hello</h1>
+        <h1 class="hclass"></h1>
+        <h1 class="hclass"></h1>
+
+    </div>
+
+    <input type="text" id="inputid" onkeyup="changeContent()">
+    <button onclick="clickhandeler()">
+        Click Me!!
+    </button>
+
+    <h1 id="show"></h1>
+
+    <script>
+
+
+        var changeContent= () => {
+            var data= document.getElementById("inputid").value;
+            document.getElementById("show").innerHTML=data;
+
+        }
+
+
+        // var a=document.getElementsByClassName("hclass");
+        // console.log(typeof a[0])
+
+        var b=document.querySelector("hclass");
+        console.log(b)
+
+        var clickhandeler=() => {
+
+            //for replacing 
+            // document.getElementById("hclass").innerHTML="<h1/> Hi World ;>";
+
+            //for adding new tag
+            // var node=document.createElement("h1");
+            // node.innerHTML="Hi World";
+            // document.getElementById("div").appendChild(node)
+
+
+            // alert(
+            //    "1234567890..."
+            // )
+        }
+    </script>
+</body>
+
+</html>

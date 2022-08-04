@@ -1,0 +1,43 @@
+<!-- AJAX= Asynchrous javascript and xml -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <form method="get">
+ In get method all data like  username and password will be stored in url
+        <input type="text" value="Username">
+        <input type="password" value="Password">
+        <input type="submit" value="submit">
+    </form> -->
+
+
+    <button onclick="btnClickHandler()">Submit</button>
+
+    <script>
+
+        function btnClickHandler()
+        {
+            var xhr=new XMLHttpRequest();
+            console.log(xhr)
+            xhr.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200)
+                {
+                    var data=this.responseText;
+                    var dataObj= JSON.parse (data)
+                    for(var i=0;i<dataObj.length;i++){
+                        console.log(dataObj[i].title);
+                    }
+                }
+            }
+
+            // to open any xml url v.imp
+            xhr.open("GET","https://jsonplaceholder.typicode.com/posts");
+            xhr.send();
+        }
+    </script>
+</body>
+</html>
